@@ -14,7 +14,6 @@ function solve(input) {
         return p;
     }, { });
 
-    
     console.log(lookup);
 
     return 0;
