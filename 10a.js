@@ -21,7 +21,7 @@ function solve(input) {
 				continue;
 			}
 
-			console.log(context.join(""), currChar, scores[currChar]);
+			// console.log(context.join(""), currChar, scores[currChar]);
 			return scores[currChar];
 		}
 

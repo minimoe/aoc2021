@@ -1,4 +1,4 @@
-var solve = require("../9a");
+var solve = require("../09a");
 
 var assert = require('assert');
 describe("Day 9a", function() {

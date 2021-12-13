@@ -3,8 +3,8 @@ function solve(input) {
     var numbers = parts.shift().split(",").map(x => parseInt(x));
 
     var cubes = parts.map(cube => cube.split("\n").map(row => row.trim().replace(/\s+/g, ",").split(",").map(cell => [parseInt(cell), false])));
-    console.log(numbers);
-    console.log(cubes[0].map(row => row.map(c => c[0]).join(",")).join("\n"));
+    // console.log(numbers);
+    // console.log(cubes[0].map(row => row.map(c => c[0]).join(",")).join("\n"));
     for(var nix = 0; nix < numbers.length; nix++) {
         // mark cubes
         for(var cix = 0; cix < cubes.length; cix++) {
@@ -37,7 +37,7 @@ function solve(input) {
 
                 }
             }
-            console.log(`cube ${cix}`, cols, rows);
+            // console.log(`cube ${cix}`, cols, rows);
             if(cols.filter(x => x == 5).length == 1
                 || rows.filter(x => x == 5).length == 1) {
                     return [numbers[nix], sum, numbers[nix] * sum];

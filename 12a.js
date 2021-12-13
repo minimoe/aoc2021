@@ -1,6 +1,7 @@
 function solve(input) {
-    var vertices = input.split('\n').map(l => l.trim().split('-'));
-    var lookup = vertices.reduce((p, o) => {
+    var edges = input.split('\n').map(l => l.trim().split('-'));
+
+    var lookup = edges.reduce((p, o) => {
         if(!p.hasOwnProperty(o[0])) {
             p[o[0]] = [];
         }
@@ -14,9 +15,37 @@ function solve(input) {
         return p;
     }, { });
 
-    console.log(lookup);
+    var smallCaves = Object.keys(lookup).filter(x => x !== 'start' && x !== 'end' && /^[a-z]+$/.test(x));
+    var paths = [];
 
-    return 0;
+    function getSubGraphs(vertice, path)
+    {
+        if(vertice == 'end') {
+            if(paths.indexOf(paths) < 0) {
+                paths.push(path);
+            }
+
+            return;
+        }
+
+        if(!lookup.hasOwnProperty(vertice)) {
+            return;
+        }
+
+        var nextVertices = lookup[vertice]
+            .filter(x => x != 'start'
+                && !(path.indexOf(x) >= 0 && smallCaves.indexOf(x) >= 0));
+
+        nextVertices.forEach(v => {
+                var p = path + "," + v;
+                getSubGraphs(v, p);
+            });
+
+        return;
+    }
+    getSubGraphs('start', 'start');
+
+    return paths.length;
 }
 
 module.exports = solve;

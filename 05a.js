@@ -35,7 +35,7 @@ function solve(input) {
         }
     }
     
-    console.log(points);
+    // console.log(points);
 
     return Object.keys(points).filter(x => points[x] >= 2).length;
 }

@@ -1,7 +1,7 @@
-var solve = require("../5b");
+var solve = require("../05b");
 
 var assert = require('assert');
-describe("Day 5.2", function() {
+describe("Day 05b", function() {
     it('should count to 12', function() {
         var input = `0,9 -> 5,9
         8,0 -> 0,8

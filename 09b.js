@@ -19,9 +19,9 @@ function solve(input) {
 	var sumOfLowpoints = lowpoints.map(lp => lp[1] + 1).reduce((a, b) => a + b, 0);
 
 	var basins = lowpoints.map(p => getBasinNeighbors(p[0], {}));
-	console.log(basins);
+	// console.log(basins);
 	basins.sort((a,b) => Object.keys(b).length - Object.keys(a).length);
-	console.log(basins);
+	// console.log(basins);
 	return basins.slice(0, 3).reduce((p, o) => p * Object.keys(o).length, 1);
 
 	function getBasinNeighbors(point, points) {
@@ -150,4 +150,4 @@ var b = `21278976789986768943139876431347898765434349876789323459654212989899987
 9439851012567893235999532349765432123489989679899987899432124567892359764321245789312998789899896434`;
 var result = solve(b);
 
-console.log(result);
+// console.log(result);

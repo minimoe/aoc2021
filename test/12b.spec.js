@@ -1,8 +1,8 @@
-var solve = require('../12a');
+var solve = require('../12b');
 var assert = require("assert");
 
-describe('Day 12a', () => {
-    it('should be 10 paths', () => {
+describe('Day 12b', () => {
+    it('should be 36 paths', () => {
             var input = `start-A
 start-b
 A-c
@@ -10,11 +10,11 @@ A-b
 b-d
 A-end
 b-end`;
-            assert.equal(solve(input), 10);    
+            assert.equal(solve(input), 36);    
         }
     );
 
-    it('should be 19 paths', () => {
+    it('should be 103 paths', () => {
         var input = `dc-end
         HN-start
         start-kj
@@ -26,10 +26,10 @@ b-end`;
         kj-HN
         kj-dc`;
 
-        assert.equal(solve(input), 19); 
+        assert.equal(solve(input), 103); 
     });
 
-    it('should be 226 paths', () => {
+    it('should be 3509 paths', () => {
         var input = `fs-end
         he-DX
         fs-he
@@ -49,7 +49,7 @@ b-end`;
         pj-fs
         start-RW`;
 
-        assert.equal(solve(input), 226); 
+        assert.equal(solve(input), 3509); 
     })
 
     it('should not throw exception', () => {

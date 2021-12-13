@@ -30,6 +30,6 @@ function solve(input) {
 		}, 0);
 
 	}).filter(x => x > 0).sort((a,b) => a - b);
-	console.log(errorLines);
+	// console.log(errorLines);
 	return errorLines[Math.floor(errorLines.length/2)];
 }
